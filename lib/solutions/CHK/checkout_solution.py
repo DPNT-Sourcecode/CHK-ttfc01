@@ -4,7 +4,7 @@
 # skus = unicode string
 import string
 PRICES = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40}
-PROMO = {'A': (3, 130), 'B': (2, 45)}
+PROMO = {'A': (3, 130), 'B': (2, 45), 'A': (5, 200)}
 
 
 
@@ -38,6 +38,16 @@ import unittest
 
 class TestCheckout(unittest.TestCase):
 
+    def test_buy_two_E_get_B_free_with_two_B_for_lower_price(self):
+        actual = checkout('EEBB')
+        expected = 130
+        self.assertEqual(expected, actual)
+
+    def test_buy_two_E_get_B_free_with_no_B_in_basket(self):
+        actual = checkout('EEA')
+        expected = 130
+        self.assertEqual(expected, actual)
+
     def test_buy_two_E_get_B_free_with_third_E_and_extra_B(self):
         actual = checkout('EEBEB')
         expected = 150
@@ -55,4 +65,5 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
