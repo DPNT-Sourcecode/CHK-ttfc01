@@ -14,9 +14,9 @@ class Product:
         self.price = price
         self.quantity = quantity
 
-
-
-
+    @property
+    def value(self):
+        return self.price * self.quantity
 
 
 def calculate_product_price(p_name, p_quantity):
@@ -26,7 +26,6 @@ def calculate_product_price(p_name, p_quantity):
         return ((p_quantity // quant) * price) + (p_quantity % quant) * PRICES[p_name]
     else:
         return p_quantity * PRICES[p_name]
-
 
 
 def checkout(skus):
@@ -84,4 +83,5 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
