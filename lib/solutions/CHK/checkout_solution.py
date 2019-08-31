@@ -7,6 +7,13 @@ PRICES = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40}
 PROMO = {'A': (3, 130), 'B': (2, 45), 'A': (5, 200)}
 
 
+class Product():
+
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
 
 
 def calculate_product_price(p_name, p_quantity):
@@ -74,6 +81,7 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
