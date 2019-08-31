@@ -19,7 +19,7 @@ def calculate_product_price(p_name, p_quantity):
 
 def checkout(skus):
     try:
-        skus = skus.encode('ascii', 'ignore')
+        skus = skus.decode('utf-8')
     except:
         return -1
 
@@ -30,5 +30,6 @@ def checkout(skus):
         basket_value += calculate_product_price(p_name, p_quantity)
 
     return basket_value
+
 
 
