@@ -33,5 +33,18 @@ def checkout(skus):
 
 
 
+# ------ unit tests ------
+import unittest
+
+class TestCheckout(unittest.TestCase):
+
+    def test_single_product(self):
+        actual = checkout('C')
+        expected = 21
+        self.assertEqual(expected, actual)
+
+if __name__ == '__main__':
+    unittest.main()
+
 
 
