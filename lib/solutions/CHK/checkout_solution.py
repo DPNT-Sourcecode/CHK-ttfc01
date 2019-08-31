@@ -38,6 +38,11 @@ import unittest
 
 class TestCheckout(unittest.TestCase):
 
+    def test_buy_two_E_get_B_free_with_third_E_and_extra_B(self):
+        actual = checkout('EEBEB')
+        expected = 150
+        self.assertEqual(expected, actual)
+
     def test_buy_two_E_get_B_free(self):
         actual = checkout('EEB')
         expected = 80
@@ -50,3 +55,4 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
