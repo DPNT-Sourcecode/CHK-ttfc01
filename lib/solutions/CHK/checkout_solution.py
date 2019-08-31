@@ -28,10 +28,13 @@ def checkout(skus):
     basket = dict((product, skus.count(product)) for product in list(skus))
     basket_value = 0
     for product in basket.items():
+        if not PRICES[p_name]:
+            return -1
         p_name, p_quantity = product[0], product[1]
         basket_value += calculate_product_price(p_name, p_quantity)
 
     return basket_value
+
 
 
 
