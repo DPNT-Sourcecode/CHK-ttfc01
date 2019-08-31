@@ -9,11 +9,11 @@ PROMO = {'A': (3, 130), 'B': (2, 45), 'A': (5, 200)}
 
 class Product:
 
-    def __init__(self, name, quantity):
+    def __init__(self, name, price):
         self.name = name
-        self.quantity = quantity
+        self.price = price
 
-    
+
 
 
 
@@ -83,6 +83,7 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
