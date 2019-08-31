@@ -7,7 +7,11 @@ PROMO = {'A': (3, 130), 'B': (2, 45)}
 
 
 
-def calculate_product_price(p_name, p_price):
+def calculate_product_price(p_name, p_quantity):
+    if p_name in PROMO:
+        p_promo = PROMO[p_name]
+        quant, price = p_promo
+
 
 
 
@@ -17,6 +21,7 @@ def checkout(skus):
     basket_value = 0
     for product in basket.items():
         single_price = PRICES[product[0]]
+
 
 
 
