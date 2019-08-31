@@ -2,6 +2,7 @@
 
 # noinspection PyUnusedLocal
 # skus = unicode string
+import string
 PRICES = {'A': 50, 'B': 30, 'C': 20, 'D': 15}
 PROMO = {'A': (3, 130), 'B': (2, 45)}
 
@@ -22,7 +23,8 @@ def checkout(skus):
         skus = skus.decode('utf-8')
     except:
         return -1
-
+    if len(set(list(skus)) - set(list(string.ascii_uppercase))) > 0:
+        return -1
     basket = dict((product, skus.count(product)) for product in list(skus))
     basket_value = 0
     for product in basket.items():
@@ -30,6 +32,7 @@ def checkout(skus):
         basket_value += calculate_product_price(p_name, p_quantity)
 
     return basket_value
+
 
 
 
