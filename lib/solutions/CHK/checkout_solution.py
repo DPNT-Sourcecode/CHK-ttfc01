@@ -31,8 +31,3 @@ def checkout(skus):
 
     return basket_value
 
-
-
-
-
-
