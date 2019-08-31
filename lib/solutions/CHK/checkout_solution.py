@@ -8,6 +8,7 @@ PROMO = {'A': (3, 130), 'B': (2, 45), 'A': (5, 200)}
 
 
 
+
 def calculate_product_price(p_name, p_quantity):
     if p_name in PROMO and p_quantity >= PROMO[p_name][0]:
         p_promo = PROMO[p_name]
@@ -38,9 +39,17 @@ import unittest
 
 class TestCheckout(unittest.TestCase):
 
+    def test_five_A_for_200(self):
+        actual = checkout('AAAAA')
+        expected = 200
+
+    def test_three_A_for_130(self):
+        actual = checkout('AAA')
+        expected = 130
+
     def test_buy_two_E_get_B_free_with_two_B_for_lower_price(self):
         actual = checkout('EEBB')
-        expected = 130
+        expected = 110
         self.assertEqual(expected, actual)
 
     def test_buy_two_E_get_B_free_with_no_B_in_basket(self):
@@ -65,5 +74,6 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
