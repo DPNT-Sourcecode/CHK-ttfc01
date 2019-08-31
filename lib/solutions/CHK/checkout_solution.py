@@ -11,16 +11,26 @@ def calculate_product_price(p_name, p_quantity):
     if p_name in PROMO and p_quantity >= PROMO[p_name][0]:
         p_promo = PROMO[p_name]
         quant, price = p_promo
-
+        return ((p_quantity // quant) * price) + (p_quantity % quant) * PRICES[p_name]
+    else:
+        return p_quantity * PRICES[p_name]
 
 
 
 def checkout(skus):
-    skus = skus.encode('utf-8')
+    try:
+        skus = skus.encode('utf-8')
+    except:
+        return -1
+
     basket = dict((product, skus.count(product)) for product in list(skus))
     basket_value = 0
     for product in basket.items():
-        single_price = PRICES[product[0]]
+        p_name, p_quantity = product[0], product[1]
+        basket_value += calculate_product_price(p_name, p_quantity)
+
+    return basket_value
+
 
 
 
