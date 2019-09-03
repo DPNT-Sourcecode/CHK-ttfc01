@@ -117,7 +117,6 @@ class TestBasket(unittest.TestCase):
 
     def test_calc_buy_nx_get_x_free(self):
         cases = [
-                 ('UUU U', 120),
                  ('F', 10),
                  ('FF', 20),
                  ('FF F', 20),
@@ -125,6 +124,7 @@ class TestBasket(unittest.TestCase):
                  ('FF FF F', 40),
                  ('FF FF FF', 40),
                  ('FF FF FF F', 50),
+                 ('UUU', 80),
                  ('UUU U', 120),
                  ('UUU UU', 160),
                  ('UUU UUU UU', 240)
@@ -192,6 +192,7 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
