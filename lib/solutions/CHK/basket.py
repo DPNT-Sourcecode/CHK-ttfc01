@@ -43,6 +43,7 @@ class Basket:
         """
         offer_prods - dict of products for which this offer can be applied
         """
+        items_value = 0
         for o_product in offer_prods.items():
             op_name, op_rule = o_product[0], o_product[1]
             quant_required = op_rule[0][0]
@@ -53,22 +54,22 @@ class Basket:
 
                     if quantity == 1:
                         self.products[op_name] = 0
-                        return 1 * single_price
+                        items_value += 1 * single_price
                     if quantity == 3:
                         self.products[op_name] = 0
-                        return 2 * single_price
+                        items_value += 2 * single_price
                     else:
                         self.products[op_name] = 0
-                        return single_price * (quantity - (quantity // 2 - 1))
+                        items_value += single_price * (quantity - (quantity // 2 - 1))
                 else:
                     if quantity <= 3:
                         self.products[op_name] = 0
-                        return single_price * quantity
+                        items_value += single_price * quantity
                     else:
                         self.products[op_name] = 0
-                        return single_price * (quantity - (quantity // 3))
+                        items_value += single_price * (quantity - (quantity // 3))
 
-        return 0
+        return items_value
 
     def calc_buy_multiple_items_cheaper(self, offer_prods):
         """
@@ -91,3 +92,4 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+
