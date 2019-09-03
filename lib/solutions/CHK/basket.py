@@ -50,6 +50,7 @@ class Basket:
                 quantity = self.products[op_name]
                 single_price = self.prices[op_name]
                 if quant_required == 2:
+
                     if quantity == 1:
                         self.products[op_name] = 0
                         return 1 * single_price
@@ -60,8 +61,12 @@ class Basket:
                         self.products[op_name] = 0
                         return single_price * (quantity - (quantity // 2 - 1))
                 else:
-                    self.products[op_name] = 0
-                    return single_price * (quantity - (quantity // 3))
+                    if quantity <= 3:
+                        self.products[op_name] = 0
+                        return single_price * quantity
+                    else:
+                        self.products[op_name] = 0
+                        return single_price * (quantity - (quantity // 3))
 
         return 0
 
@@ -86,3 +91,4 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+

@@ -124,6 +124,7 @@ class TestBasket(unittest.TestCase):
                  ('FF FF F', 40),
                  ('FF FF FF', 40),
                  ('FF FF FF F', 50),
+                 ('UU', 80),
                  ('UUU', 120),
                  ('UUU U', 120),
                  ('UUU UU', 160),
@@ -191,6 +192,7 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
