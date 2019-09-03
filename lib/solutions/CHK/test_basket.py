@@ -93,6 +93,8 @@ class TestBasket(unittest.TestCase):
             ('NNN M FFF KK QQQ VV', 460),
             (' EE B RRR Q  VVV BB NNN M FFF KK QQQ VV ', 865),
             ('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ', 1880),
+            ('LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH', 1880),
+            ('PPPPQRUVPQRUVPQRUVSU', 740),
             ('AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH', 1640)]
         for case in cases:
             skus, expected = case[0].replace(' ', ''), case[1]
@@ -197,3 +199,4 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
