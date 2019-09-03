@@ -122,4 +122,3 @@ class Basket:
 
                 items_value += promo_price
         return items_value
-
