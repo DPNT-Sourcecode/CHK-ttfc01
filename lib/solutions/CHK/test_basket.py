@@ -20,6 +20,8 @@ TEST_PROMO_BUY_NX_GET_Y = {'E': [(2, 'B')],  # 2 items E gives item B for free],
 TEST_PROMO_BUY_NX_GET_X = {'F': [(2, 'F')],
                            'U': [(3, 'U')]}
 
+TEST_PROMO_BUY_ANY_N_ITEMS_FOR_X = ['S', 'T', 'X', 'Y', 'Z']
+
 TEST_PROMOS = [TEST_PROMO_BUY_NX_GET_Y,
                TEST_PROMO_BUY_NX_GET_X,
                TEST_PROMO_MULTIPLE_ITEMS_CHEAPER]  # promos applied in order
@@ -44,6 +46,26 @@ class TestBasket(unittest.TestCase):
         actual = basket._calculate_base_product_price('A', 2)
         expected = 100
         self.assertEqual(expected, actual)
+
+    def test_calc_buy_any_n_products_for_x(self):
+        cases = [
+            ('SSS TTT XXX', 135),
+            ('ZZZ XXX', 96),
+            ('ZZZ ZYX XX', 124),
+            ('XXY ZZ', 79),
+            ('ZZ', 0),
+            ('Z', 0),
+            ('ZZZ', 45),
+            ('XXX', 45),
+            ('SSSS', 65),
+            ('TTTT', 65)]
+        for case in cases:
+            skus, expected = case[0].replace(' ', ''), case[1]
+            basket = Basket(skus, TEST_PRICES)
+
+            actual = basket.calc_buy_any_n_products_for_x(TEST_PROMO_BUY_ANY_N_ITEMS_FOR_X)
+
+            self.assertEqual(expected, actual, 'Failing case: {}'.format(case[0]))
 
     def test_get_basket_total_value(self):
         cases = [('AAAAA PPPPP UUUU EE B RRR Q AAA HHHHHHHHHH VVV BB NNN M FFF KK QQQ VV HHHHH', 1640),
@@ -200,3 +222,4 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
