@@ -26,6 +26,18 @@ class Basket:
     def _check_if_valid_basket(self):
         return all(product in self.prices.keys() for product in self.products.keys())
 
+    def calc_buy_any_n_products_for_x(self, offer_prods):
+        """
+        offer_prods - dict of products for which this offer can be applied
+        """
+        items_value = 0
+        promo_items_prices_keys = set(offer_prods) & self.prices.keys()
+        promo_items_dict = {p: self.prices[p] for p in promo_items_prices_keys}
+        promo_items_prices = sorted(promo_items_dict.items(), key=lambda i: i[1], reverse=True)
+
+        return items_value
+
+
     def calc_buy_nx_get_y_free(self, offer_prods):
         """
         offer_prods - dict of products for which this offer can be applied
@@ -92,3 +104,4 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+
