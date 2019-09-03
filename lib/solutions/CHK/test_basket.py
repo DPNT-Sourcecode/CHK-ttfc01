@@ -17,7 +17,8 @@ TEST_PROMO_BUY_NX_GET_Y = {'E': [(2, 'B')],  # 2 items E gives item B for free],
                            'N': [(3, 'M')],
                            'R': [(3, 'Q')]}
 
-TEST_PROMO_BUY_NX_GET_X = {'F': [(2, 'F')]}
+TEST_PROMO_BUY_NX_GET_X = {'F': [(2, 'F')],
+                           'U': [(3, 'U')]}
 
 TEST_PROMOS = [TEST_PROMO_BUY_NX_GET_Y,
                TEST_PROMO_BUY_NX_GET_X,
@@ -84,8 +85,8 @@ class TestBasket(unittest.TestCase):
             ('QQQ', 80),
             ('RRR QQ', 180),
             ('UUU U', 120),
-            ('UUU UU', 200),
-            ('UUU UUU UU', 320)]
+            ('UUU UU', 160),
+            ('UUU UUU UU', 240)]
         for case in cases:
             skus, expected = case[0].replace(' ', ''), case[1]
             basket = Basket(skus, TEST_PRICES, TEST_PROMOS)
@@ -123,8 +124,8 @@ class TestBasket(unittest.TestCase):
                  ('FF FF FF', 40),
                  ('FF FF FF F', 50),
                  ('UUU U', 120),
-                 ('UUU UU', 200),
-                 ('UUU UUU UU', 320)
+                 ('UUU UU', 160),
+                 ('UUU UUU UU', 240)
                  ]
         for case in cases:
             skus, expected = case[0].replace(' ', ''), case[1]
@@ -189,4 +190,5 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
