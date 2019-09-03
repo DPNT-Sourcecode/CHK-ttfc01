@@ -46,7 +46,7 @@ class TestBasket(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_get_basket_total_value(self):
-        cases = [
+        cases = [('AAAAA PPPPP UUUU EE B RRR Q AAA HHHHHHHHHH VVV BB NNN M FFF KK QQQ VV HHHHH', 1640),
             ('FF', 20),
             ('AAAAA AAAAA', 400),
             ('AAAAA AAAAA AAAAA A ', 650),
@@ -95,7 +95,7 @@ class TestBasket(unittest.TestCase):
             ('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ', 1880),
             ('LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH', 1880),
             ('PPPPQRUVPQRUVPQRUVSU', 740),
-            ('AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH', 1640)]
+            ('AAAAA PPPPP UUUU EE B RRR Q AAA HHHHHHHHHH VVV BB NNN M FFF KK QQQ VV HHHHH', 1640)]
         for case in cases:
             skus, expected = case[0].replace(' ', ''), case[1]
             basket = Basket(skus, TEST_PRICES, TEST_PROMOS)
@@ -199,4 +199,5 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
