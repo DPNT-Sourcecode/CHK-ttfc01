@@ -19,8 +19,7 @@ PROMO_BUY_NX_GET_Y = {'E': [(2, 'B')],  # 2 items E gives item B for free],
                       'N': [(3, 'M')],
                       'R': [(3, 'Q')]}
 
-PROMO_BUY_NX_GET_X = {'F': [(2, 'F')],
-                      'U': [(3, 'U')]}
+PROMO_BUY_NX_GET_X = {'F': [(2, 'F')]}
 
 PROMOS = [PROMO_BUY_NX_GET_Y, PROMO_BUY_NX_GET_X, PROMO_MULTIPLE_ITEMS_CHEAPER]  # promos applied in order
 
@@ -32,3 +31,4 @@ def checkout(skus):
     basket_value = basket.get_basket_total_value()
 
     return basket_value
+

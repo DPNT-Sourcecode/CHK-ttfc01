@@ -17,8 +17,7 @@ TEST_PROMO_BUY_NX_GET_Y = {'E': [(2, 'B')],  # 2 items E gives item B for free],
                            'N': [(3, 'M')],
                            'R': [(3, 'Q')]}
 
-TEST_PROMO_BUY_NX_GET_X = {'F': [(2, 'F')],
-                           'U': [(3, 'U')]}
+TEST_PROMO_BUY_NX_GET_X = {'F': [(2, 'F')]}
 
 TEST_PROMOS = [TEST_PROMO_BUY_NX_GET_Y,
                TEST_PROMO_BUY_NX_GET_X,
@@ -190,3 +189,4 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
