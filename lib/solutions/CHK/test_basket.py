@@ -128,6 +128,7 @@ class TestBasket(unittest.TestCase):
                  ('ZZZ Z', 66),
                  ('ZZZ ZZZ', 90),
                  ('STXYZ', 82),
+                 ('XXX TTT Z', 107),
                  ('ZZZ QQQ PPPPP', 325),
                  ('VVV XX RRR Q W', 334),
                  ('YYST UUUU Z NNN MM', 340),
@@ -235,4 +236,5 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
