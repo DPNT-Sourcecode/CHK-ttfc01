@@ -21,12 +21,6 @@ class Basket:
 
         return basket_value
 
-    def _calculate_base_product_price(self, p_name, p_quantity):
-        return p_quantity * self.prices[p_name]
-
-    def _check_if_valid_basket(self):
-        return all(product in self.prices.keys() for product in self.products.keys())
-
     def calc_buy_any_n_products_for_x(self, offer_prods):
         """
         offer_prods - dict of products for which this offer can be applied
@@ -123,3 +117,10 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+
+    def _calculate_base_product_price(self, p_name, p_quantity):
+        return p_quantity * self.prices[p_name]
+
+    def _check_if_valid_basket(self):
+        return all(product in self.prices.keys() for product in self.products.keys())
+
