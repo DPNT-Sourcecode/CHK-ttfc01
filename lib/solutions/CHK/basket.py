@@ -13,6 +13,7 @@ class Basket:
         self.calc_buy_nx_get_y_free(self.promos[0])
         basket_value += self.calc_buy_nx_get_x_free(self.promos[1])
         basket_value += self.calc_buy_multiple_items_cheaper(self.promos[2])
+        basket_value += self.calc_buy_any_n_products_for_x(self.promos[3])
 
         for product in self.products.items():
             p_name, p_quantity = product[0], product[1]
@@ -122,3 +123,4 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+

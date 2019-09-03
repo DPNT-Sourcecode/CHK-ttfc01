@@ -24,7 +24,8 @@ TEST_PROMO_BUY_ANY_N_ITEMS_FOR_X = ['S', 'T', 'X', 'Y', 'Z']
 
 TEST_PROMOS = [TEST_PROMO_BUY_NX_GET_Y,
                TEST_PROMO_BUY_NX_GET_X,
-               TEST_PROMO_MULTIPLE_ITEMS_CHEAPER]  # promos applied in order
+               TEST_PROMO_MULTIPLE_ITEMS_CHEAPER,
+               TEST_PROMO_BUY_ANY_N_ITEMS_FOR_X]  # promos applied in order
 
 
 class TestBasket(unittest.TestCase):
@@ -234,6 +235,7 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
