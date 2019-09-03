@@ -55,7 +55,7 @@ class Basket:
                     if quantity == 1:
                         self.products[op_name] = 0
                         items_value += 1 * single_price
-                    if quantity == 3:
+                    elif quantity == 3:
                         self.products[op_name] = 0
                         items_value += 2 * single_price
                     else:
@@ -92,4 +92,5 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+
 
