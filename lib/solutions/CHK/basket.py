@@ -47,8 +47,8 @@ class Basket:
                         promo_items_from_basket[op_name] -= 1
                         offer_applied_cntr -= 1
 
-                if offer_applied_cntr == 0:
-                    items_value += 45
+            if offer_applied_cntr == 0:
+                items_value += 45
 
         for item in promo_items_from_basket.items():
             p_name, p_quantity = item[0], item[1]
@@ -122,3 +122,4 @@ class Basket:
 
                 items_value += promo_price
         return items_value
+
