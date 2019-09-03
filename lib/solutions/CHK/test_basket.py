@@ -106,7 +106,7 @@ class TestBasket(unittest.TestCase):
             (5 * 'H' + 21 * 'H', 215),
             (19 * 'H', 165),
             (20 * 'H', 160),
-            ('NNN MM X BB', 270),
+            ('NNN MM X BB', 197),
             ('QQQ', 80),
             ('RRR QQ', 180),
             ('UUU U', 120),
@@ -114,7 +114,8 @@ class TestBasket(unittest.TestCase):
             ('UUU UUU UU', 240),
             ('EE B RRR Q  VVV BB', 405),
             ('NNN M FFF KK QQQ VV', 460),
-            (' EE B RRR Q  VVV BB NNN M FFF KK QQQ VV ', 865),
+            ('EE B RRR Q  VVV BB NNN M FFF KK QQQ VV ', 865),
+            ('EE B RRR Q  VVV BB NNN M FFF KK QQQ VV ZZZ Z', 931),
             ('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ', 1880),
             ('LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH', 1880),
             ('PPPPQRUVPQRUVPQRUVSU', 740),
@@ -129,7 +130,7 @@ class TestBasket(unittest.TestCase):
             ('ZZZ QQQ PPPPP', 325),
             ('VVV XX RRR Q W', 334),
             ('YYST UUUU Z NNN MM', 380),
-            ('AAAAA PPPPP UUUU EE B RRR Q AAA HHHHHHHHHH VVV BB NNN M FFF KK QQQ VV HHHHH STXYZ', 1640),     ]
+            ('AAAAA PPPPP UUUU EE B RRR Q AAA HHHHHHHHHH VVV BB NNN M FFF KK QQQ VV HHHHH STXYZ', 1722)]
         for case in cases:
             skus, expected = case[0].replace(' ', ''), case[1]
             basket = Basket(skus, TEST_PRICES, TEST_PROMOS)
@@ -233,5 +234,6 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
