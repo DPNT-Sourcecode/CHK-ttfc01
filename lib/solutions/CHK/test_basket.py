@@ -2,13 +2,13 @@ import unittest
 from .checkout_solution import Basket
 
 TEST_PRICES = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40, 'F': 10, 'G': 20, 'H': 10,
-               'I': 35, 'J': 60, 'K': 80, 'L': 90, 'M': 15, 'N': 40, 'O': 10, 'P': 50,
+               'I': 35, 'J': 60, 'K': 70, 'L': 90, 'M': 15, 'N': 40, 'O': 10, 'P': 50,
                'Q': 30, 'R': 50, 'S': 20, 'T': 20, 'U': 40, 'V': 50, 'W': 20, 'X': 17,
                'Y': 20, 'Z': 21}
 TEST_PROMO_MULTIPLE_ITEMS_CHEAPER = {'A': [(5, 200), (3, 130)],
                                      'B': [(2, 45)],
                                      'H': [(10, 80), (5, 45)],
-                                     'K': [(2, 150)],
+                                     'K': [(2, 120)],
                                      'P': [(5, 200)],
                                      'Q': [(3, 80)],
                                      'V': [(3, 130), (2, 90)]}
@@ -236,5 +236,6 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
