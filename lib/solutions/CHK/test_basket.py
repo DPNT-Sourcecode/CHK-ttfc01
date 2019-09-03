@@ -61,7 +61,9 @@ class TestBasket(unittest.TestCase):
             ('SSSS', 45),
             ('TTTT', 45),
             ('STXYZ', 45),
-            ('XXX TTT Z', 90)]
+            ('XXX TTT Z', 90),
+            ('SSS', 45),
+            ('STX', 45)]
         for case in cases:
             skus, expected = case[0].replace(' ', ''), case[1]
             basket = Basket(skus, TEST_PRICES)
@@ -128,6 +130,7 @@ class TestBasket(unittest.TestCase):
                  ('ZZZ Z', 66),
                  ('ZZZ ZZZ', 90),
                  ('STXYZ', 82),
+                 ('STX', 45),
                  ('XXX TTT Z', 107),
                  ('ZZZ QQQ PPPPP', 325),
                  ('VVV XX RRR Q W', 334),
@@ -236,6 +239,7 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
