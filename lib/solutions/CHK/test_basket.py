@@ -117,7 +117,7 @@ class TestBasket(unittest.TestCase):
             ('NNN M FFF KK QQQ VV', 460),
             ('EE B RRR Q  VVV BB NNN M FFF KK QQQ VV ', 865),
             ('EE B RRR Q  VVV BB NNN M FFF KK QQQ VV ZZZ Z', 931),
-            ('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ', 1880),
+            ('ABCDEFGHIJKLMNOPQR ST UV W XYZ ABCDEFGHIJKLMNOPQR ST UV W XYZ', 1880),
             ('LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH', 1880),
             ('PPPPQRUVPQRUVPQRUVSU', 740),
             ('AAAAA PPPPP UUUU EE B RRR Q AAA HHHHHHHHHH VVV BB NNN M FFF KK QQQ VV HHHHH', 1640),
@@ -235,6 +235,7 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
