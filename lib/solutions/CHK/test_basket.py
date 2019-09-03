@@ -81,6 +81,7 @@ class TestBasket(unittest.TestCase):
             ('CDFFAECBDEAB', 300),
             (5 * 'H' + 10 * 'H', 125),
             (5 * 'H' + 21 * 'H', 215),
+            (19 * 'H', 165),
             ('HHHHHHHHHHHHHHHHHHHH', 160),
             ('NNN MM X BB', 270),
             ('QQQ', 80),
@@ -192,6 +193,7 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
 
 
