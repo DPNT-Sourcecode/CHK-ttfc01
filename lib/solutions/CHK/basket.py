@@ -123,4 +123,3 @@ class Basket:
 
     def _check_if_valid_basket(self):
         return all(product in self.prices.keys() for product in self.products.keys())
-

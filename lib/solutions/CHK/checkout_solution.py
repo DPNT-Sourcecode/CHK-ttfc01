@@ -36,6 +36,3 @@ def checkout(skus):
     basket_value = basket.get_basket_total_value()
 
     return basket_value
-
-
-
