@@ -49,13 +49,13 @@ class TestBasket(unittest.TestCase):
 
     def test_calc_buy_any_n_products_for_x(self):
         cases = [
+            ('ZZZ', 45),
             ('SSS TTT XXX', 135),
             ('ZZZ XXX', 96),
             ('ZZZ ZYX XX', 124),
             ('XXY ZZ', 79),
             ('ZZ', 0),
             ('Z', 0),
-            ('ZZZ', 45),
             ('XXX', 45),
             ('SSSS', 65),
             ('TTTT', 65)]
@@ -222,5 +222,3 @@ class TestBasket(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-

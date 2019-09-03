@@ -35,8 +35,26 @@ class Basket:
         promo_items_dict = {p: self.prices[p] for p in promo_items_prices_keys}
         promo_items_prices = sorted(promo_items_dict.items(), key=lambda i: i[1], reverse=True)
 
-        return items_value
+        promo_items_from_basket_keys = set(offer_prods) & self.products.keys()
+        promo_items_from_basket = {p: self.products[p] for p in promo_items_from_basket_keys}
 
+        while sum([p[1] for p in promo_items_from_basket.items()]) >= 3:
+            offer_applied_cntr = 3
+            for o_product in promo_items_prices:
+                op_name, op_price = o_product[0], o_product[1]
+                if op_name in promo_items_from_basket:
+                    while promo_items_from_basket[op_name] > 0 and offer_applied_cntr > 0:
+                        promo_items_from_basket[op_name] -= 1
+                        offer_applied_cntr -= 1
+
+                if offer_applied_cntr == 0:
+                    items_value += 45
+
+        for item in promo_items_from_basket.items():
+            p_name, p_quantity = item[0], item[1]
+            self.products[p_name] = p_quantity
+
+        return items_value
 
     def calc_buy_nx_get_y_free(self, offer_prods):
         """
@@ -104,4 +122,3 @@ class Basket:
 
                 items_value += promo_price
         return items_value
-
